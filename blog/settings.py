@@ -14,7 +14,7 @@ SECRET_KEY = '(hogr03%))$0=*!w)wr4v7+ukia75)+wq=hb=m9#f)vg+ub9dd'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1','infojungle.herokuapp.com']
 
 
 # Application definition
