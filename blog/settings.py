@@ -1,6 +1,8 @@
 import os
 from pathlib import Path
-
+import django_heroku
+import dj_database_url
+from decouple import config
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -163,19 +165,6 @@ AUTHENTICATION_BACKENDS = (
 )
 
 SITE_ID = 1
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'console': {
-            'class': 'logging.StreamHandler',
-        },
-    },
-    'loggers': {
-        'django': {
-            'handlers': ['console'],
-            'level': os.getenv('DJANGO_LOG_LEVEL', 'ERROR'),
-        },
-    },
-}
-COMPRESS_ENABLED = os.environ.get('COMPRESS_ENABLED', False)
+
+django_heroku.settings(locals())
+
