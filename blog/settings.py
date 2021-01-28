@@ -178,3 +178,4 @@ LOGGING = {
         },
     },
 }
+COMPRESS_ENABLED = os.environ.get('COMPRESS_ENABLED', False)
