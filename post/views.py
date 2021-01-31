@@ -138,7 +138,7 @@ class PostListView(ListView):
 def post_list(request):
     category_count = get_category_count()
     most_recent = Post.objects.order_by('-timestamp')[:3]
-    post_list = Post.objects.all()
+    post_list = Post.objects.get_queryset().order_by('id')
     paginator = Paginator(post_list, 4)
     page_request_var = 'page'
     page = request.GET.get(page_request_var)
